@@ -364,7 +364,7 @@ module.exports = function (grunt) {
       },
       styles: {
         expand: true,
-        cwd: '<%= yeoman.app %>/styles',
+        cwd: '<%= yeoman.app %>/styles/less',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
       }
@@ -390,6 +390,21 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.js',
         singleRun: true
+      }
+    },
+
+    less: {
+      all: {
+        options: {
+            sourceMap: true,
+            sourceMapFilename: 'dist/styles/main.css.map',
+            sourceMapURL: 'main.css.map',
+            sourceMapBasepath: 'app/styles/less',
+            sourceMapRootpath: '/dist/styles/less',
+        },
+        files: {
+          "dist/styles/main.css": "app/styles/less/main.less"
+        }
       }
     }
   });
@@ -421,6 +436,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
+    'less',
     'karma'
   ]);
 
@@ -434,6 +450,7 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'copy:dist',
     'cdnify',
+    'less',
     'cssmin',
     'uglify',
     'filerev',
