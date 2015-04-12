@@ -1,6 +1,57 @@
 
 @import 'variable.less';
 
-body{
-    background-color:@background-color;
+
+html,body,main-wrapper,[ng-view]{
+    height:100%;
 }
+
+    section{
+        height:100%;
+        margin:0 auto;
+
+    }
+
+    .header{
+        background-image: url('../images/cycling.jpg');
+        background-repeat:no-repeat;
+        background-size:cover;
+        text-align:center;
+
+        .title{
+              color: white;
+              text-align: center;
+              font-size: 55px;
+              font-weight: bold;
+              padding-top: 15%;
+        }
+        .sub-title {
+            color: white;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            padding-top: 5%;
+        }
+    }
+
+    .activity-intro{
+        background-color:#123243;
+        color: white;
+              text-align: center;
+              font-size: 25px;
+              font-weight: bold;
+              padding-top: 15%;
+    }
+
+    .sign-in{
+        background-color:#1bbc9b;
+
+        color: white;
+              text-align: center;
+              font-size: 25px;
+              font-weight: bold;
+              padding-top: 15%;
+
+        
+    }
+
